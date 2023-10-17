@@ -1,0 +1,39 @@
+
+questions = [
+    {
+        "question": "What is the capital of India?",
+        "options": ["A) Delhi", "B) Mumbai", "C) Kolkata", "D) Manipur"],
+        "correct_answer": "B",
+    },
+    {
+        "question": "Which planet is Closer to Sun?",
+        "options": ["A) Venus", "B) Mercury", "C) Jupiter", "D) Saturn"],
+        "correct_answer": "B",
+    },
+    {
+        "question": "What is the largest mammal in the world?",
+        "options": ["A) Elephant", "B) Blue Whale", "C) Giraffe", "D) Lion"],
+        "correct_answer": "B",
+    },
+]
+
+score = 0
+
+def ask_question(question_data):
+    global score
+    print(question_data["question"])
+    for option in question_data["options"]:
+        print(option)
+
+    user_answer = input("Enter your answer: ").strip().upper()
+
+    if user_answer == question_data["correct_answer"]:
+        print("Correct!\n")
+        score += 1
+    else:
+        print(f"Wrong! The correct answer is {question_data['correct_answer']}\n")
+
+for question in questions:
+    ask_question(question)
+
+print(f"Your final score is: {score}/{len(questions)}")
