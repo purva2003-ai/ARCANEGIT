@@ -1,0 +1,21 @@
+Questions = {
+    "What is your name?": "I'm Chatbot 2.4 .",
+    "How are you?": "I'm fine Thank you, What about you?",
+    "Where do you live?": "I live in few Electrical object (after few days few will be replaced by every).",
+    "Goodbye": "Goodbye! Have a great day!"
+}
+
+def chatbot(input_text):
+    input_text = input_text.lower() 
+    
+    for question, response in Questions.items():
+        if input_text in question.lower():
+            return response
+
+    return "I'm sorry, I don't understand that question."
+
+user_input = input("You: ")
+while user_input.lower() != "exit":
+    response = chatbot(user_input)
+    print("Chatbot:", response)
+    user_input = input("You: ")
